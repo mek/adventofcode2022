@@ -1,5 +1,5 @@
 # AOC 2022 - Day 1
-ontrueawk https://github.com/onetrueawk/awk
+onetrueawk https://github.com/onetrueawk/awk
 
 We don't have to worry about WHICH elves, only that how much 
 they collect. So, I didn't. 
