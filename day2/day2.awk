@@ -42,12 +42,7 @@ BEGIN {
 	t["B"] = "Paper"  ; t["Y"] = "Paper"
 	t["C"] = "Scissor"; t["Z"] = "Scissor"
 }
-{
-	if (NF!=2) {
-		print "Line " NR " has bad input"
-		exit
-	}
-
+/^[ABC] [XYZ]/ {
 	me = t[$2]; opp = t[$1]
 	total["me"]     = total["me"]     + score(me,opp)
 	total["opp"]    = total["opp"]    + score(opp,me)
