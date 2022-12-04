@@ -1,5 +1,4 @@
 #!/bin/sh
-onetrueawk '
 BEGIN {
 	print "Advent of Code - Day 4 - One True Awk"
 	lines = 0 
@@ -9,6 +8,7 @@ BEGIN {
 }
 /^#/ {
 	print substr($0,2)
+	getline
 }
 /^[0-9][0-9\-,]*/ {
 	lines++;
@@ -26,5 +26,3 @@ END {
 	print lines - nooverlap
 	print "Done - Advent of Code - Day 4 - One True Awk"
 }
-' $1
-	

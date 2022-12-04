@@ -1,5 +1,3 @@
-#!/bin/sh
-onetrueawk '
 function score(ME,OPP,	x,y) {
 	x = v[ME]
 	if(ME=="Paper") {
@@ -58,4 +56,3 @@ BEGIN {
 END {
 	for(i in total) printf "who:%s:score:%d\n",i,total[i]
 }
-' $1

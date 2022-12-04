@@ -1,17 +1,4 @@
 #!/bin/sh
-onetrueawk '
-
-function ordc(_ordi) {
-	return sprintf("%c",_ordi+0.0)
-}
-function ord_init() {
-	for(_ordi=32; _ordi<128; _ordi++) {
-		_ORD[ordc(_ordi)] = _ordi
-	}
-}
-function ordn(_ordc) {
-	return _ORD[_ordc]
-}
 function getvalue(_char, _getvalue_i) {
 	_getvalue_i = ordn(_char)
 	if(_getvalue_i >= 65 &&  _getvalue_i <= 95)
@@ -20,13 +7,6 @@ function getvalue(_char, _getvalue_i) {
 		return _getvalue_i - 96
 	return 0
 }
-function rmdup(_rmdups,		_rmdupi,_rmdupa,_rmduptemp) {
-	for(_rmdupi=1;_rmdupi<=length(_rmdups);_rmdupi++) {
-		_rmduptemp=(++_rmdupa[substr(_rmdups,_rmdupi,1)]==1? _rmduptemp substr(_rmdups,_rmdupi,1):_rmduptemp)
-	}
-	return _rmduptemp
-}
-		
 BEGIN { 
 	ord_init() 
 	total = 0
@@ -64,4 +44,3 @@ END {
 	print total
 	print prisum	
 }
-' $1
