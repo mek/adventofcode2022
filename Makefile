@@ -51,6 +51,15 @@ day5:
 output/day5: day5/day5.awk day5/input
 	@$(AWK) -f ./lib/utils.awk -f ./day5/day5.awk day5/input > output/day5
 
+.PHONY: day10-test day10
+day10-test:
+	@$(AWK) -f ./lib/utils.awk -f ./day10/day10.awk day10/input_test
+day10:
+	@$(AWK) -f ./lib/utils.awk -f ./day10/day10.awk day10/input
+output/day10: day10/day10.awk day10/input
+	@$(AWK) -f ./lib/utils.awk -f ./day10/day10.awk day10/input > output/day10
+
+
 .PHONY: push
 push:
 	@git push -u origin trunk
